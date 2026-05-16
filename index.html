@@ -561,14 +561,18 @@
       // Google Drive share link:
       // https://drive.google.com/file/d/FILE_ID/view
       const driveFile = s.match(/drive\.google\.com\/file\/d\/([^/]+)/);
-      if (driveFile) return `https://drive.google.com/uc?export=view&id=${driveFile[1]}`;
+      if (driveFile) return `https://drive.google.com/thumbnail?id=${driveFile[1]}&sz=w1200`;
 
       // Google Drive open link:
       // https://drive.google.com/open?id=FILE_ID
       const driveOpen = s.match(/drive\.google\.com\/open\?id=([^&]+)/);
-      if (driveOpen) return `https://drive.google.com/uc?export=view&id=${driveOpen[1]}`;
+      if (driveOpen) return `https://drive.google.com/thumbnail?id=${driveOpen[1]}&sz=w1200`;
 
-      // Google Drive uc link, direct image, atau CDN
+      // Google Drive uc link:
+      // https://drive.google.com/uc?export=view&id=FILE_ID
+      const driveUc = s.match(/drive\.google\.com\/uc\?.*id=([^&]+)/);
+      if (driveUc) return `https://drive.google.com/thumbnail?id=${driveUc[1]}&sz=w1200`;
+
       return s;
     }
 
@@ -580,7 +584,8 @@
         s.includes("drive.google.com/file/d/") ||
         s.includes("drive.google.com/open?id=") ||
         s.includes("googleusercontent.com") ||
-        s.includes("uc?export=view")
+        s.includes("uc?export=view") ||
+        s.includes("drive.google.com/thumbnail")
       );
     }
 
@@ -723,7 +728,7 @@
       return `
         <article class="card">
           <div class="image">
-            ${item.photo ? `<img src="${escapeHtml(item.photo)}" alt="${escapeHtml(title(item))}" loading="lazy" onerror="this.remove()">` : ""}
+            ${item.photo ? `<img src="${escapeHtml(item.photo)}" alt="${escapeHtml(title(item))}" loading="lazy" referrerpolicy="no-referrer" onerror="console.warn(\'Foto gagal dimuat:\', this.src); this.remove()">` : ""}
             <span class="pill ${pillClass}">${escapeHtml(item.status || "Cek stok")}</span>
             <div class="image-title">${escapeHtml(title(item))}</div>
           </div>

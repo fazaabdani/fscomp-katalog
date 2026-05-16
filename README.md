@@ -108,3 +108,13 @@ Perubahan:
   - footer.
 - Tambahan strip trust: QC ketat, garansi toko, servis profesional, stok update.
 - Tambahan panel QC di bawah katalog.
+
+
+## Update V8 - Google Drive Foto Lebih Stabil
+
+Perubahan:
+- Link Google Drive `file/d/.../view`, `open?id=...`, dan `uc?...id=...` sekarang dikonversi ke:
+  `https://drive.google.com/thumbnail?id=FILE_ID&sz=w1200`
+- Format thumbnail ini biasanya lebih stabil untuk ditampilkan di tag gambar website.
+- Pastikan file Drive disetel: Anyone with the link → Viewer.
+- Di spreadsheet, link harus ditempel sebagai teks URL asli, bukan hyperlink dengan teks pendek seperti "foto".
