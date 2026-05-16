@@ -94,3 +94,17 @@ Disesuaikan dengan header spreadsheet saat ini:
 
 Header yang cocok:
 MEREK | SERI | PROCESSOR | RAM | STORAGE | DISPLAY | HARGA | STOK | STATUS | FITUR TAMBAHAN | LOKASI STOK | MINUS | LINK KATALOG WA | LINK FOTO
+
+
+## Update V7 - Tema disamakan dengan landing page
+
+Perubahan:
+- Tema navy gelap + aksen cyan agar nyambung dengan fscomp.id.
+- Header/topbar ditambahkan.
+- Link ke https://fscomp.id ditaruh di:
+  - logo/header kiri,
+  - tombol "fscomp.id" bagian atas,
+  - tombol "Landing Utama" di hero,
+  - footer.
+- Tambahan strip trust: QC ketat, garansi toko, servis profesional, stok update.
+- Tambahan panel QC di bawah katalog.
