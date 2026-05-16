@@ -118,3 +118,14 @@ Perubahan:
 - Format thumbnail ini biasanya lebih stabil untuk ditampilkan di tag gambar website.
 - Pastikan file Drive disetel: Anyone with the link → Viewer.
 - Di spreadsheet, link harus ditempel sebagai teks URL asli, bukan hyperlink dengan teks pendek seperti "foto".
+
+
+## Update V9 - Popup Foto
+
+Perubahan:
+- Foto produk pada kartu bisa diklik untuk membuka popup foto besar.
+- Tombol kedua otomatis:
+  - `Lihat Detail` jika ada LINK KATALOG WA / link detail.
+  - `Lihat Foto` jika tidak ada link detail tapi ada LINK FOTO.
+  - `Minta Foto` jika foto dan link detail kosong.
+- Jika foto ada, judul pada area gambar disembunyikan agar foto tidak tertutup tulisan.
