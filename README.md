@@ -83,3 +83,14 @@ Perubahan:
 
 Rekomendasi kolom spreadsheet:
 SERI | MEREK | PROCESSOR | RAM | STORAGE | DISPLAY | HARGA | STOK | STATUS | LOKASI STOK | FOTO | LINK_KATALOG
+
+
+## Update V6
+
+Disesuaikan dengan header spreadsheet saat ini:
+- LINK KATALOG WA dibaca sebagai link detail unit.
+- LINK FOTO dibaca sebagai foto utama produk.
+- MEREK tetap dibaca dari kolom MEREK.
+
+Header yang cocok:
+MEREK | SERI | PROCESSOR | RAM | STORAGE | DISPLAY | HARGA | STOK | STATUS | FITUR TAMBAHAN | LOKASI STOK | MINUS | LINK KATALOG WA | LINK FOTO

@@ -341,11 +341,11 @@
 
       // Link katalog tetap dibaca, tapi label "KATALOG WA" / "Facebook" tidak ditampilkan ke pelanggan.
       // Kalau ada beberapa sumber link, prioritas: LINK_KATALOG / LINK / KATALOG WA.
-      const catalogLink = pick(row, ["LINK_KATALOG", "LINK", "URL", "KATALOG_WA", "KATALOG"]);
+      const catalogLink = pick(row, ["LINK_KATALOG", "LINK_KATALOG_WA", "KATALOG_WA", "KATALOG", "LINK_DETAIL", "LINK", "URL"]) || pickContains(row, ["LINK", "KATALOG"]) || pickContains(row, ["KATALOG"]);
 
       // Kolom foto bisa dinamai FOTO, GAMBAR, IMAGE, PHOTO, FOTO_URL, atau LINK_FOTO.
       const photoRaw =
-        pick(row, ["FOTO", "GAMBAR", "IMAGE", "PHOTO", "FOTO_URL", "LINK_FOTO", "URL_FOTO"]) ||
+        pick(row, ["FOTO", "GAMBAR", "IMAGE", "PHOTO", "FOTO_URL", "LINK_FOTO", "URL_FOTO", "LINK_GAMBAR", "URL_GAMBAR"]) ||
         pickContains(row, ["FOTO"]) ||
         pickContains(row, ["GAMBAR"]) ||
         pickContains(row, ["IMAGE"]);
