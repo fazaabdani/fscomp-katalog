@@ -58,3 +58,8 @@ Kalau data belum muncul, cek:
 ## 5. Update data
 
 Cukup update spreadsheet. Website akan membaca data terbaru saat dibuka/refresh.
+
+
+## Update file setelah revisi
+
+Kalau repo sudah ada, cukup upload/replace `index.html`, lalu commit. Coolify akan redeploy otomatis jika auto-deploy aktif. Kalau tidak, klik Redeploy manual.
