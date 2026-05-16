@@ -129,3 +129,11 @@ Perubahan:
   - `Lihat Foto` jika tidak ada link detail tapi ada LINK FOTO.
   - `Minta Foto` jika foto dan link detail kosong.
 - Jika foto ada, judul pada area gambar disembunyikan agar foto tidak tertutup tulisan.
+
+
+## Update V10 - Fix Loading Stuck
+
+Perbaikan:
+- Modal popup foto dipindahkan sebelum script agar JavaScript tidak error.
+- Event listener popup dibuat aman.
+- Mengatasi masalah halaman berhenti di "Memuat data katalog...".

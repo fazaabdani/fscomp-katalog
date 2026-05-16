@@ -548,6 +548,19 @@
     </p>
   </main>
 
+
+  <div class="photo-modal" id="photoModal" aria-hidden="true">
+    <div class="photo-modal-card">
+      <div class="photo-modal-head">
+        <div class="photo-modal-title" id="photoModalTitle">Foto Produk</div>
+        <button class="photo-modal-close" id="photoModalClose" type="button" aria-label="Tutup foto">×</button>
+      </div>
+      <div class="photo-modal-body">
+        <img id="photoModalImg" src="" alt="Foto produk besar" />
+      </div>
+    </div>
+  </div>
+
   <script>
     const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1fAcFER0FqV8S94vJhglkY3Rg4EYU7c9_Sn5QEsvNPWc/gviz/tq?tqx=out:csv&sheet=LIST%20STOK%20LAPTOP%20SECOND";
     const WA_NUMBER = "62816660056";
@@ -843,6 +856,7 @@
       const modal = el("photoModal");
       const img = el("photoModalImg");
       const titleEl = el("photoModalTitle");
+      if (!modal || !img || !titleEl) return;
       img.src = src;
       titleEl.textContent = titleText || "Foto Produk";
       modal.classList.add("open");
@@ -853,6 +867,7 @@
     function closePhotoModal() {
       const modal = el("photoModal");
       const img = el("photoModalImg");
+      if (!modal || !img) return;
       modal.classList.remove("open");
       modal.setAttribute("aria-hidden", "true");
       img.src = "";
@@ -899,8 +914,8 @@
     }
 
 
-    el("photoModalClose").addEventListener("click", closePhotoModal);
-    el("photoModal").addEventListener("click", function(e) {
+    if (el("photoModalClose")) el("photoModalClose").addEventListener("click", closePhotoModal);
+    if (el("photoModal")) el("photoModal").addEventListener("click", function(e) {
       if (e.target === this) closePhotoModal();
     });
     document.addEventListener("keydown", function(e) {
@@ -910,18 +925,6 @@
     ["search", "brandFilter", "locationFilter", "availabilityFilter", "sort"].forEach(id => el(id).addEventListener("input", render));
     load();
   </script>
-
-  <div class="photo-modal" id="photoModal" aria-hidden="true">
-    <div class="photo-modal-card">
-      <div class="photo-modal-head">
-        <div class="photo-modal-title" id="photoModalTitle">Foto Produk</div>
-        <button class="photo-modal-close" id="photoModalClose" type="button" aria-label="Tutup foto">×</button>
-      </div>
-      <div class="photo-modal-body">
-        <img id="photoModalImg" src="" alt="Foto produk besar" />
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
